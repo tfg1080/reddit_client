@@ -1,0 +1,29 @@
+.RedditCard {
+    background-color: tan;
+    border-radius: 10px;
+    margin: 20px auto;
+    width: 500px;
+    height: auto;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.icon {
+    width: 50px;
+    border-radius: 50%;
+    display: inline-flex;
+    float: left;
+
+}
+
+h4 {
+    display: flex;
+    float: left;
+}
+
+h2{
+    align-self: flex-end;
+    width: 80%;
+}

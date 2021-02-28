@@ -1,0 +1,9 @@
+.Navbar h1 {
+    height: 70px;
+    color: white;
+    background-color: lightcoral;
+    margin: 0 auto;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+}
