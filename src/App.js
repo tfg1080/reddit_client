@@ -13,17 +13,34 @@ function App() {
   },[]);
   
   const getInitialPosts = () => {
-      fetch("https://www.reddit.com/r/popular/.json"
+    fetch("https://www.reddit.com/r/popular/.json"
       ).then(response => response.json()
-      ).then(jsonResponse =>  {
+      ).then(jsonResponse =>  { 
+    
           setPosts(jsonResponse.data.children.map(post => post));
       });
   };
 
+  const search = (input) => {
+    // const searchTerm = in.target.value;
+    fetch(`https://www.reddit.com/r/${input}/.json`
+    ).then(response => response.json()
+    ).then(jsonResponse =>  {
+      if(!jsonResponse.data){
+        return;
+      }
+        setPosts(jsonResponse.data.children.map(post => post))
+      });
+  }
+
+  const handleSearch = (e) => {
+    setTimeout(search(e.target.value), 2000)
+  }
 
   return (
     <div className="App">
       <Navbar />
+      <input type="search" placeholder="Search Subreddit..." onChange={handleSearch}/>
       {posts.map(post => {
        return (
          <RedditCard 
