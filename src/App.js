@@ -55,6 +55,7 @@ function App() {
         subsub={post.data.subreddit_subscribers}
         postType={post.data.post_hint}
         thumbnail={post.data.thumbnail}
+        search={search}
        />
 
        )})
